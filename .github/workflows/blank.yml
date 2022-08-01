@@ -14,7 +14,7 @@ jobs:
       - name: Project version
         uses: lorislab/samo-action@v0.1.0-alpha2
         with:
-            command: echo "FOO=$(samo project version)" >> $GITHUB_ENV            
+            entryPoint: echo "FOO=$(samo project version)" >> $GITHUB_ENV            
       - name: Use the value
         id: step_two
         run: |
