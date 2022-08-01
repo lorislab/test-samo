@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Project version
-        uses: lorislab/samo-action@v1
+        uses: lorislab/samo-action@v0.1.0-alpha2
         with:
           args: project version
       - name: Project version
