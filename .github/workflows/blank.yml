@@ -10,7 +10,7 @@ jobs:
       - name: Project version
         uses: lorislab/samo-action@v0.1.0-alpha2
         with:
-          args: project version
+          args: samo project version
       - name: Project version
         uses: lorislab/samo-action@v0.1.0-alpha2
         with:
