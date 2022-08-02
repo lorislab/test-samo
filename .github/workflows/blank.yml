@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Project version
         id: version
-        uses: lorislab/samo-action@v0.1.0-alpha3
+        uses: lorislab/samo-action@v0.1.0-alpha4
         with:
           args: samo project version
       - name: Use the value
@@ -17,7 +17,7 @@ jobs:
         run: |
           echo "${{ steps.version.outputs.stdout }}"
       - name: Project version
-        uses: lorislab/samo-action@v0.1.0-alpha3
+        uses: lorislab/samo-action@v0.1.0-alpha4
         with:
           entrypoint: samo
           args: project version
