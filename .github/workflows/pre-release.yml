@@ -20,7 +20,6 @@ jobs:
         run: |
           echo "${{ steps.version.outputs.stdout }}"
       - name: Create release
-        id: version
         uses: lorislab/samo-action@v1.0.0
         with:
           entrypoint: samo
