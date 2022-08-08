@@ -1,11 +1,15 @@
 name: Create patch
 on:
   workflow_dispatch:
-  
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - name: Check
+        run: |
+          echo ${{ github.ref_name }}
       - name: Project version
         id: version
         uses: lorislab/samo-action@v1.0.0
