@@ -6,6 +6,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Check
+        run: |
+          echo ${{ github.ref_name }}    
       - name: Project version
         id: version
         uses: lorislab/samo-action@v1.0.0

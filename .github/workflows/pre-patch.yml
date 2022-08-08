@@ -1,11 +1,7 @@
 name: Create patch
 on:
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Create patch branch from tag'
-        required: true
-        type: string
+  
 jobs:
   test:
     runs-on: ubuntu-latest
