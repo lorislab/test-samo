@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Project version
         id: version
-        uses: lorislab/samo-action@v0.1.0-alpha4
+        uses: lorislab/samo-action@v1.0.0
         with:
           args: samo project version
       - name: Use the value

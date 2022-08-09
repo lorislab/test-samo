@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.TEST_PAT }}
       - name: Config git
         run: |
           git config --global --add safe.directory "${GITHUB_WORKSPACE}"
@@ -36,4 +37,4 @@ jobs:
         uses: lorislab/samo-action@v1.0.0
         with:
           entrypoint: samo
-          args: project release
+          args: project release -v debug
