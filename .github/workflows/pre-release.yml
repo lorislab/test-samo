@@ -14,24 +14,24 @@ jobs:
           git config --global --add safe.directory "${GITHUB_WORKSPACE}"
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git fetch --tags
-      - name: Get project version
-        id: version
-        uses: lorislab/samo-action@v1.0.0
-        with:
-          args: samo project version --version release
-      - name: Set up java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: '17'
-          cache: 'maven'
-      - name: Set project version
-        run: mvn versions:set -DnewVersion=${{ steps.version.outputs.stdout }}
-      - name: Commit project version
-        run: |
-          git add .
-          git commit -m "[RELEASE] - Bump version to ${{ steps.version.outputs.stdout }}"
+          # git fetch --tags
+      # - name: Get project version
+      #   id: version
+      #   uses: lorislab/samo-action@v1.0.0
+      #   with:
+      #     args: samo project version --version release
+      # - name: Set up java
+      #   uses: actions/setup-java@v3
+      #   with:
+      #     distribution: 'zulu'
+      #     java-version: '17'
+      #     cache: 'maven'
+      # - name: Set project version
+      #   run: mvn versions:set -DnewVersion=${{ steps.version.outputs.stdout }}
+      # - name: Commit project version
+      #   run: |
+      #     git add .
+      #     git commit -m "[RELEASE] - Bump version to ${{ steps.version.outputs.stdout }}"
       - name: Create release
         uses: lorislab/samo-action@v1.0.0
         with:
