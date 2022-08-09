@@ -18,7 +18,7 @@ jobs:
         id: version
         uses: lorislab/samo-action@v1.0.0
         with:
-          args: samo project version
+          args: samo project version --version release
       - name: Set project version
         run: mvn versions:set -DnewVersion=${{ steps.version.outputs.stdout }}
       - name: Commit project version
