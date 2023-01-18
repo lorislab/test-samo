@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: lorislab/install-samo-action@v1.0.0-beta.1
+      - uses: lorislab/install-samo-action@main
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
