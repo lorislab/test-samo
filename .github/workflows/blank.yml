@@ -10,16 +10,12 @@ jobs:
         with:
           fetch-depth: 0
       - name: Project version
-        id: version
-        uses: lorislab/samo-action@main
-        with:
-          args: samo project version
-      - name: Use the value
-        id: step_two
         run: |
-          echo "${{ steps.version.outputs.stdout }}"
-      - name: Project version
-        uses: lorislab/samo-action@main
+          mkdir target
+          echo '${{ toJSON(github) }}' > 'target/github.json'
+      - uses: actions/upload-artifact@v3
         with:
-          entrypoint: samo
-          args: project version
+          name: package
+          path: target
+          retention-days: 1
+          if-no-files-found: ignore
